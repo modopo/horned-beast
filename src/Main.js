@@ -1,7 +1,6 @@
 import React from "react";
 import HornedBeast from "./HornedBeast";
 import data from "./data.json";
-import { waitForElementToBeRemoved } from "@testing-library/react";
 
 class Main extends React.Component {
 
