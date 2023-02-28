@@ -1,4 +1,7 @@
 import React from "react";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class HornedBeast extends React.Component {
   constructor(props) {
@@ -16,13 +19,23 @@ class HornedBeast extends React.Component {
 
   render() {
     return (
-      <>
-        <h2>{this.props.title}</h2>
-        <p>{this.state.favorited === 0 ? `🤍 Favorited ${this.state.favorited} times.` : `❤️ Favorited ${this.state.favorited} times.`}</p>
-        <img src={this.props.imageUrl} alt={this.props.title} onClick={this.handFavorited}></img>
-        <p>{this.props.description}</p>
-      </>
-    )
+      <Card style={{ width: '18rem' }}>
+        <Card.Img 
+          variant='top' 
+          src={this.props.imageUrl} 
+          alt={this.props.title} 
+          onClick={this.handFavorited}
+          className='hornedBeast'
+        />
+        <Card.Body>
+          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Text>{this.props.description}</Card.Text>
+          <Card.Text>
+            {this.state.favorited === 0 ? `🤍 Favorited ${this.state.favorited} times.` : `❤️ Favorited ${this.state.favorited} times.`}
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    );
   }
 }
 
