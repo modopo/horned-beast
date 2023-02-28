@@ -86,4 +86,4 @@ Feature #3: Bootstrap
 Estimated time need to complete: 3 hours
 Start time: 1:00 PM
 Finish time: 4:00 PM
-Actual Time: 12:39 PM
+Actual Time: 3:35 PM
