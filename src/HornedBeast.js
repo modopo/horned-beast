@@ -10,21 +10,26 @@ class HornedBeast extends React.Component {
     };
   }
 
-  handFavorited = () => {
+  handleFavorited = () => {
     this.setState({
       favorited: this.state.favorited + 1,
     });
   }
 
+  handleClick = () => {
+    this.handleFavorited();
+    this.props.openModal(this.props.imageUrl, this.props.title, this.props.description);
+  }
+  
+
   render() {
     return (
-      <Card style={{ width: '18rem' }}>
+      <Card style={{width: '18rem'}} className='hornedBeast'>
         <Card.Img 
           variant='top' 
           src={this.props.imageUrl} 
           alt={this.props.title} 
-          onClick={this.handFavorited}
-          className='hornedBeast'
+          onClick={this.handleClick}
         />
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>

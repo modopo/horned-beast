@@ -1,19 +1,19 @@
 import React from "react";
 import HornedBeast from "./HornedBeast";
-import data from "./data.json";
 
 class Main extends React.Component {
 
   render() {
-    let beast = data.map((elem, idx) => {
+    let beast = this.props.data.map((elem) => {
       return (
         <HornedBeast
           imageUrl={elem.image_url}
           title={elem.title}
-          description={elem.title}
+          description={elem.description}
           keyword={elem.keyword}
-          key={elem.idx}
           horns={elem.horns}
+          key={elem._id}
+          openModal={this.props.openModal}
         />
       )
     });
@@ -23,7 +23,7 @@ class Main extends React.Component {
         {beast}
       </main>
     )
-  }
+  };
 }
 
 export default Main;
