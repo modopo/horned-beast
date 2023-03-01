@@ -92,4 +92,4 @@ Feature #4: Display a Modal
 Estimated time need to complete: 3 hour
 Start time: 12:14 PM
 Finish time: 3:14 PM
-Actual Time: 12:39 PM
+Actual Time: 3:07 PM
