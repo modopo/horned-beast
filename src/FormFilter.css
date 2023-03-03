@@ -1,0 +1,12 @@
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+select.form-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
