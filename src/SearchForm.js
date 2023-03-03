@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import './SearchForm.css';
+import './css/SearchForm.css';
 
 class SearchForm extends React.Component {
   
