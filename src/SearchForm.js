@@ -13,7 +13,7 @@ class SearchForm extends React.Component {
           placeholder="Search..."
           onChange={this.props.ongoingSearch}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Search</Button>
       </Form>
     );
   }

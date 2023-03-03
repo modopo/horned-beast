@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
 import Header from './Header';
-import FormFilter from './FormFilter';
-import SearchForm from './SearchForm';
 import Main from './Main';
 import Footer from './Footer';
 import SelectedBeast from './SelectedBeast';
@@ -83,18 +81,13 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Header />
-        <section className='filtering'>
-          <SearchForm 
-            searchInput={this.handleSearchSubmit}
-            ongoingSearch={this.handleOngoingInput} 
-          />
-          <FormFilter
-            data={data}
-            filterInput={this.handleFilterSubmit}
-            ongoingInput={this.handleOngoingSelect}
-          />
-        </section>
+        <Header
+          data={data}
+          searchInput={this.handleSearchSubmit}
+          ongoingSearch={this.handleOngoingInput} 
+          filterInput={this.handleFilterSubmit}
+          ongoingInput={this.handleOngoingSelect}
+        />
         <Main
           data={this.state}
           modalInfo={this.getSelectedBeast}

@@ -20,7 +20,7 @@ class FormFilter extends React.Component {
           <option value="0">All Horned Beast</option>
           {options}
         </Form.Select>
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Filter</Button>
       </Form>
     );
   }
