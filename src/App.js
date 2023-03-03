@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './Header';
 import FormFilter from './FormFilter';
+import SearchForm from './SearchForm';
 import Main from './Main';
 import Footer from './Footer';
 import SelectedBeast from './SelectedBeast';
@@ -18,7 +19,8 @@ class App extends React.Component {
       description: '',
       title: '',
       filterInput: 0,
-      filteredData: data
+      filteredData: data,
+      searchInput: ''
     }
   }
 
@@ -37,7 +39,7 @@ class App extends React.Component {
     })
   }
 
-  handleSubmit = (e) => {
+  handleFilterSubmit = (e) => {
     e.preventDefault();
 
     let newData = data.filter(beast => {
@@ -59,15 +61,40 @@ class App extends React.Component {
     });
   }
 
+  handleOngoingInput = (e) => {
+    this.setState({
+      searchInput: e.target.value
+    });
+  }
+
+  handleSearchSubmit = (e) => {
+    e.preventDefault();
+
+    let newData = data.filter(beast => {
+      let re = new RegExp(`\\b${this.state.searchInput}`, 'i');
+      return re.test(beast.title);
+    });
+
+    this.setState({
+      filteredData: newData
+    });
+  }
+
   render() {
     return (
       <>
         <Header />
-        <FormFilter
-          data={data}
-          filterInput={this.handleSubmit}
-          ongoingInput={this.handleOngoingSelect}
-        />
+        <section className='filtering'>
+          <SearchForm 
+            searchInput={this.handleSearchSubmit}
+            ongoingSearch={this.handleOngoingInput} 
+          />
+          <FormFilter
+            data={data}
+            filterInput={this.handleFilterSubmit}
+            ongoingInput={this.handleOngoingSelect}
+          />
+        </section>
         <Main
           data={this.state}
           modalInfo={this.getSelectedBeast}

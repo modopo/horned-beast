@@ -6,7 +6,7 @@ form {
   margin: 10px;
 }
 
-select.form-select {
+form input {
   display: flex;
   justify-content: center;
   align-items: center;
