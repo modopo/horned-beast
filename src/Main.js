@@ -4,7 +4,7 @@ import HornedBeast from "./HornedBeast";
 class Main extends React.Component {
 
   render() {
-    let beast = this.props.data.map((elem) => {
+    let beastToRender = this.props.data.filteredData.map(elem => {
       return (
         <HornedBeast
           imageUrl={elem.image_url}
@@ -13,15 +13,17 @@ class Main extends React.Component {
           keyword={elem.keyword}
           horns={elem.horns}
           key={elem._id}
-          openModal={this.props.openModal}
+          modalInfo={this.props.modalInfo}
         />
       )
     });
 
     return (
-      <main>
-        {beast}
-      </main>
+      <>
+        <main>
+          {beastToRender}
+        </main>
+      </>
     )
   };
 }

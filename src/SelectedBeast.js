@@ -6,7 +6,7 @@ class SelectedBeast extends React.Component {
 
   render() {
     return (
-      <Modal show={this.props.showModal} onHide={this.props.closeModal} centered>
+      <Modal show={this.props.selected.showModal} onHide={this.props.closeModal} centered>
         <Modal.Header closeButton>
           <Modal.Title>{this.props.selected.title}</Modal.Title>
         </Modal.Header>
