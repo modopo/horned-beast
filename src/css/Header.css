@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a8dadc;
+  padding-bottom: 30px;
+}
+
+h1 {
+  color: #1d3557;
+  display: flex;
+  align-items: center;
+  font-size: 4rem !important;
+  height: 100px;
+}

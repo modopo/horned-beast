@@ -1,11 +1,23 @@
 import React from "react";
+import FormFilter from "./FormFilter";
+import SearchForm from "./SearchForm";
+import "./css/Header.css"
 
 class Header extends React.Component {
   render() {
     return (
-      <div>
+      <header>
         <h1>Horned Beasts</h1>
-      </div>
+        <SearchForm 
+          searchInput={this.props.searchInput}
+          ongoingSearch={this.props.ongoingSearch} 
+        />
+        <FormFilter 
+          data={this.props.data}
+          filterInput={this.props.filterInput}
+          ongoingInput={this.props.ongoingInput}
+        />
+      </header>
     )
   }
 }
